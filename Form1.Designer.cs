@@ -35,7 +35,7 @@
             this.ChatCnt = new System.Windows.Forms.Label();
             this.DltAll = new System.Windows.Forms.Button();
             this.SlctDlt = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCnt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblEchoMessenger
@@ -65,11 +65,13 @@
             // 
             this.txtTypeHere.Font = new System.Drawing.Font("굴림", 16F);
             this.txtTypeHere.Location = new System.Drawing.Point(20, 362);
+            this.txtTypeHere.MaxLength = 50;
             this.txtTypeHere.Name = "txtTypeHere";
-            this.txtTypeHere.Size = new System.Drawing.Size(587, 38);
+            this.txtTypeHere.Size = new System.Drawing.Size(458, 38);
             this.txtTypeHere.TabIndex = 2;
             this.txtTypeHere.Text = "(여기에 입력)";
             this.txtTypeHere.TextChanged += new System.EventHandler(this.txtTypeHere_TextChanged);
+            this.txtTypeHere.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTypeHere_KeyPress);
             // 
             // btnSend
             // 
@@ -115,12 +117,12 @@
             this.SlctDlt.UseVisualStyleBackColor = true;
             this.SlctDlt.Click += new System.EventHandler(this.SlctDlt_Click);
             // 
-            // textBox1
+            // txtCnt
             // 
-            this.textBox1.Location = new System.Drawing.Point(631, 275);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 25);
-            this.textBox1.TabIndex = 7;
+            this.txtCnt.Location = new System.Drawing.Point(484, 362);
+            this.txtCnt.Name = "txtCnt";
+            this.txtCnt.Size = new System.Drawing.Size(123, 38);
+            this.txtCnt.TabIndex = 7;
             // 
             // Form1
             // 
@@ -128,9 +130,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(812, 446);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.DltAll);
             this.Controls.Add(this.SlctDlt);
+            this.Controls.Add(this.txtCnt);
             this.Controls.Add(this.ChatCnt);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtTypeHere);
@@ -153,7 +155,7 @@
         private System.Windows.Forms.Label ChatCnt;
         private System.Windows.Forms.Button DltAll;
         private System.Windows.Forms.Button SlctDlt;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label txtCnt;
     }
 }
 

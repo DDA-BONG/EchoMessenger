@@ -43,8 +43,34 @@ namespace EchoMessenger
         string MyMessage;
         private void txtTypeHere_TextChanged(object sender, EventArgs e)
         {
+            // 현재 입력값을 저장하고 글자 수 표시
             MyMessage = txtTypeHere.Text;
+            int len = MyMessage?.Length ?? 0;
+            txtCnt.Text = $"입력 글자수: {len}/50";
 
+            // MaxLength prevents most overflows, but handle pasted text exceeding limit
+            if (len > 50)
+            {
+                MessageBox.Show("최대 50자까지 입력할 수 있습니다.", "입력이 제한됩니다.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessage = MyMessage.Substring(0, 50);
+                txtTypeHere.Text = MyMessage;
+                txtTypeHere.SelectionStart = txtTypeHere.Text.Length;
+            }
+        }
+
+        private void txtTypeHere_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 제어문자가 아닌 일반 입력일 때 현재 길이가 50이면 추가 입력 차단
+            if (!char.IsControl(e.KeyChar))
+            {
+                int currentLength = txtTypeHere.Text.Length;
+                if (currentLength >= 50)
+                {
+                    e.Handled = true; // 입력 차단
+                    System.Media.SystemSounds.Beep.Play();
+                    MessageBox.Show("최대 50자까지 입력할 수 있습니다.", "입력 제한", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void btnSend_Click(object sender, EventArgs e)
