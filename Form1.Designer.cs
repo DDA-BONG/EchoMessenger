@@ -51,26 +51,27 @@
             this.lstChatting.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lstChatting.FormattingEnabled = true;
             this.lstChatting.ItemHeight = 23;
-            this.lstChatting.Location = new System.Drawing.Point(20, 70);
+            this.lstChatting.Location = new System.Drawing.Point(20, 66);
             this.lstChatting.Name = "lstChatting";
-            this.lstChatting.Size = new System.Drawing.Size(756, 234);
+            this.lstChatting.Size = new System.Drawing.Size(764, 234);
             this.lstChatting.TabIndex = 1;
             this.lstChatting.SelectedIndexChanged += new System.EventHandler(this.lstChatting_SelectedIndexChanged);
             // 
             // txtTypeHere
             // 
-            this.txtTypeHere.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtTypeHere.Font = new System.Drawing.Font("굴림", 16F);
             this.txtTypeHere.Location = new System.Drawing.Point(20, 362);
             this.txtTypeHere.Name = "txtTypeHere";
-            this.txtTypeHere.Size = new System.Drawing.Size(562, 30);
+            this.txtTypeHere.Size = new System.Drawing.Size(587, 38);
             this.txtTypeHere.TabIndex = 2;
+            this.txtTypeHere.Text = "(여기에 입력)";
             this.txtTypeHere.TextChanged += new System.EventHandler(this.txtTypeHere_TextChanged);
             // 
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.Gold;
             this.btnSend.Font = new System.Drawing.Font("휴먼엑스포", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSend.Location = new System.Drawing.Point(605, 339);
+            this.btnSend.Location = new System.Drawing.Point(613, 362);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(171, 74);
             this.btnSend.TabIndex = 3;
@@ -83,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(812, 446);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtTypeHere);
             this.Controls.Add(this.lstChatting);

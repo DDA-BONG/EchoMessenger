@@ -16,11 +16,15 @@ namespace EchoMessenger
         public Form1()
         {
             InitializeComponent();
+            this.AcceptButton = btnSend; //엔터키와 btnSend 버튼을 연결
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = txtTypeHere;
+            txtTypeHere.Focus(); //폼이 로드될 때 txtTypeHere 텍스트박스에 포커스를 설정
+            txtTypeHere.Clear();
+            
         }
 
         private void lblEchoBox_Click(object sender, EventArgs e)
@@ -36,16 +40,18 @@ namespace EchoMessenger
         private void txtTypeHere_TextChanged(object sender, EventArgs e)
         {
             MyMessage = txtTypeHere.Text;
-            
+
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            lstChatting.Items.Add(MyMessage);
-            txtTypeHere.Clear();
-        }
-
-        
+            if (!string.IsNullOrWhiteSpace(MyMessage))//MyMessage가 null이거나 공백이 아닐경우에만 실행
+            {
+                lstChatting.Items.Add(MyMessage);
+                txtTypeHere.Clear();
+                txtTypeHere.Focus();
+            }
         }
     }
+}
 
