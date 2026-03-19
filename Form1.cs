@@ -47,10 +47,20 @@ namespace EchoMessenger
         {
             if (!string.IsNullOrWhiteSpace(MyMessage))//MyMessage가 null이거나 공백이 아닐경우에만 실행
             {
-                lstChatting.Items.Add(MyMessage);
+
+                // 현재 시간과 함께 메시지를 리스트에 추가
+                string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string rslt = $"[{timestamp}] {MyMessage.Trim()}";//앞, 뒤 불필요한 공백을 제거한 메시지 추가
+                lstChatting.Items.Add(rslt);
+                ChatCnt.Text = $"현재 대화 : {lstChatting.Items.Count}개"; // 채팅 수 업데이트
                 txtTypeHere.Clear();
                 txtTypeHere.Focus();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
