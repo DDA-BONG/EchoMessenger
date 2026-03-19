@@ -48,7 +48,7 @@ namespace EchoMessenger
             int len = MyMessage?.Length ?? 0;
             txtCnt.Text = $"입력 글자수: {len}/50";
 
-            // MaxLength prevents most overflows, but handle pasted text exceeding limit
+            // 입력된 글자의 길이가 50자를 초과하면 경고 메시지를 표시하고 입력을 제한
             if (len > 50)
             {
                 MessageBox.Show("최대 50자까지 입력할 수 있습니다.", "입력이 제한됩니다.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -68,7 +68,7 @@ namespace EchoMessenger
                 {
                     e.Handled = true; // 입력 차단
                     System.Media.SystemSounds.Beep.Play();
-                    MessageBox.Show("최대 50자까지 입력할 수 있습니다.", "입력 제한", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("최대 50자까지 입력할 수 있습니다.", "입력이 제한됩니다.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
