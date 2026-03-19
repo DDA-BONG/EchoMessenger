@@ -33,6 +33,9 @@
             this.txtTypeHere = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.ChatCnt = new System.Windows.Forms.Label();
+            this.DltAll = new System.Windows.Forms.Button();
+            this.SlctDlt = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblEchoMessenger
@@ -91,12 +94,43 @@
             this.ChatCnt.Text = "현재 대화 : ";
             this.ChatCnt.Click += new System.EventHandler(this.label1_Click);
             // 
+            // DltAll
+            // 
+            this.DltAll.ForeColor = System.Drawing.Color.Red;
+            this.DltAll.Location = new System.Drawing.Point(547, 301);
+            this.DltAll.Name = "DltAll";
+            this.DltAll.Size = new System.Drawing.Size(121, 36);
+            this.DltAll.TabIndex = 5;
+            this.DltAll.Text = "전체 삭제";
+            this.DltAll.UseVisualStyleBackColor = true;
+            this.DltAll.Click += new System.EventHandler(this.DltAll_Click);
+            // 
+            // SlctDlt
+            // 
+            this.SlctDlt.Location = new System.Drawing.Point(420, 301);
+            this.SlctDlt.Name = "SlctDlt";
+            this.SlctDlt.Size = new System.Drawing.Size(121, 36);
+            this.SlctDlt.TabIndex = 6;
+            this.SlctDlt.Text = "선택 삭제";
+            this.SlctDlt.UseVisualStyleBackColor = true;
+            this.SlctDlt.Click += new System.EventHandler(this.SlctDlt_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(631, 275);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(153, 25);
+            this.textBox1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(812, 446);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DltAll);
+            this.Controls.Add(this.SlctDlt);
             this.Controls.Add(this.ChatCnt);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtTypeHere);
@@ -117,6 +151,9 @@
         private System.Windows.Forms.TextBox txtTypeHere;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label ChatCnt;
+        private System.Windows.Forms.Button DltAll;
+        private System.Windows.Forms.Button SlctDlt;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
